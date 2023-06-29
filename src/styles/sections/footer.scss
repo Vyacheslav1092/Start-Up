@@ -1,0 +1,44 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 25px 0;
+    background-color: $footer-bg;
+
+    @media (max-width: 768px) {
+        position: unset;
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &-logo {
+        @media (max-width: 768px) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.rights {
+    display: flex;
+    font-size: 13px;
+    line-height: normal;
+    font-weight: 500;
+    color: $white;
+
+    &-date {
+        display: flex;
+        margin-right: 5px;
+
+        &-year {
+            display: block;
+        }
+    }
+}

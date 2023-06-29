@@ -1,0 +1,123 @@
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    background-color: $white;
+    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.10);
+
+    @media (max-width: 768px) {
+        padding: 5px 0;
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-nav {
+
+        @media (max-width: 768px) {
+            position: absolute;
+            top: 34px;
+            left: 0;
+            display: none;
+            justify-content: center;
+            padding-top: 30px;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(5px);
+        }
+
+        &-list {
+            display: flex;
+            gap: 30px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            &-item {
+                @media (max-width: 768px) {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                &__link {
+                    color: $text;
+                    font-size: 16px;
+                    line-height: normal;
+                    font-family: 'montserrat-500', sans-serif;
+                    font-weight: 500;
+    
+                    @media (max-width: 768px) {
+                        font-family: 'montserrat-700', sans-serif;
+                        font-weight: 700;
+                        text-align: center;
+                    }
+                }
+            }
+        
+        }
+    }
+}
+
+.burger-button {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        display: flex;
+    }
+
+    span {
+        position: absolute;
+        border-radius: 4px;
+        width: 20px;
+        height: 2px;
+        background-color: $text;
+        transition: .5s ease;
+
+        &:nth-child(1) {
+            transform: translateY(-6px);
+        }
+        
+        &:nth-child(2) {
+            transform: translateY(6px);
+        }
+    }
+}
+
+.--active {
+    span:nth-child(1) {
+        transform: translateY(0px) rotate(45deg);
+        transition-delay: .125s;
+        background-color: $text-card;
+    }
+    
+    span:nth-child(2) {
+        transform: translateY(0px) rotate(315deg);
+        transition-delay: .25s;
+        background-color: $text-card;
+    }
+
+    span:nth-child(3) {
+        transform: translate(60px);
+        background-color: $text-card;
+    }
+}
+
+.visible {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
